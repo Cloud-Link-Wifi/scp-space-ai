@@ -27,7 +27,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 chat_history = {}
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.8-flash"
 
 SYSTEM_PROMPT = f"""You are {BOT_NAME}, a helpful AI assistant. 
 Respond in English only. 
