@@ -1,4 +1,5 @@
 import os
+import asyncio
 import threading
 import logging
 from flask import Flask
@@ -145,6 +146,11 @@ def run_flask():
     flask_app.run(host="0.0.0.0", port=port)
 
 def main():
+    try:
+        asyncio.set_event_loop(asyncio.new_event_loop())
+    except Exception:
+        pass
+        
     threading.Thread(target=run_flask, daemon=True).start()
     
     app = Application.builder().token(TELEGRAM_TOKEN).build()
